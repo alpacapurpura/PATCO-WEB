@@ -1,0 +1,254 @@
+.op-body {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.op-body .op-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.op-body .op-section.op-nosotros {
+  padding: 50px 100px 0;
+}
+/* 
+.op-body .op-section.op-nosotros::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-size: cover;
+  background-position: center top;
+  opacity: 0.35;
+  z-index: -2;
+} */
+
+.op-body .op-section .op-title {
+  color: #008037;
+  font-size: 40px;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  animation: title-load 500ms ease-in;
+}
+
+.op-body .op-section .op-title ~ p {
+  animation: title-text-load 700ms ease-in;
+}
+
+.op-body .op-section .op-subtitle {
+  color: #008037;
+  font-size: 30px;
+  text-transform: uppercase;
+  font-weight: bold;
+  display: flex;
+  animation: subtitle-load 800ms ease-in;
+}
+
+.op-body .op-section .op-subtitle ~ p {
+  animation: subtitle-text-load 900ms ease-in;
+}
+
+.op-body .op-section p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.op-nosotros .op-imagenes {
+  position: relative;
+  overflow: hidden;
+  grid-column: 2;
+  grid-row: 1 / 3;
+}
+
+.op-nosotros .op-imagenes figure {
+  position: relative;
+  width: 400%;
+  margin: 0;
+  left: 0;
+  top: 25%;
+  animation: 20s slider infinite;
+}
+
+.op-nosotros .op-imagenes figure img {
+  width: 25%;
+  float: left;
+  transform: scaleY(1.5);
+}
+
+.op-nosotros .op-imagenes .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: -ms-radial-gradient(
+    transparent 224px,
+    rgba(255, 255, 255, 1) 225px
+  );
+  background: -o-radial-gradient(
+    transparent 224px,
+    rgba(255, 255, 255, 1) 225px
+  );
+  background: -moz-radial-gradient(
+    transparent 224px,
+    rgba(255, 255, 255, 1) 225px
+  );
+  background: -webkit-radial-gradient(
+    transparent 224px,
+    rgba(255, 255, 255, 1) 225px
+  );
+  pointer-events: none;
+}
+
+.op-nosotros .op-imagenes .overlay::after {
+  content: '';
+}
+
+.op-nosotros .op-barra.title {
+  padding-bottom: 30px;
+}
+
+.op-nosotros .op-barra.subtitle div:first-child {
+  padding-bottom: 30px;
+}
+
+.op-section .op-barra.icons {
+  text-align: center;
+  padding: 50px 0;
+}
+
+.op-section .op-barra .imagen {
+  background-image: url('../assets//inicio/inicio4.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 600px;
+}
+
+.op-section.sectores {
+  background-color: rgba(21, 194, 161, 0.9);
+  color: #ffffff;
+  position: relative;
+}
+/*
+.op-section.sectores::after {
+  content: '';
+  background-image: url('../_img/Nosostros/nosotros-sector.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}*/
+
+.op-section.sectores .op-icon span,
+.op-section.sectores .op-subtitle {
+  color: #ffffff;
+}
+
+.op-section .op-iconos {
+  display: flex;
+  justify-content: space-around;
+  padding: 0 100px 50px;
+  flex-wrap: wrap;
+  z-index: 1;
+}
+
+.op-section .op-iconos.sectores {
+  background-color: #15c2a1;
+}
+
+@keyframes title-load {
+  0% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes title-text-load {
+  0% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes subtitle-load {
+  0% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes subtitle-text-load {
+  0% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@media (min-width: 1350px) {
+  .op-body .op-section .op-title {
+    font-size: 44px;
+  }
+
+  .op-body .op-section .op-subtitle {
+    font-size: 34px;
+  }
+
+  .op-body .op-section p {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 858px) {
+  .op-body .op-section.op-nosotros {
+    padding: 50px 50px 0;
+  }
+
+  .op-section.sectores::after {
+    background-size: contain;
+    background-repeat: repeat;
+  }
+
+  .op-section .op-iconos {
+    padding: 0 50px 50px;
+  }
+}
+
+@media (max-width: 576px) {
+  .op-body .op-section.op-nosotros {
+    padding: 30px;
+  }
+
+  .op-section .op-barra.icons {
+    padding: 50px 20px;
+  }
+
+  .op-body .op-section .op-subtitle {
+    font-size: 25px;
+  }
+}

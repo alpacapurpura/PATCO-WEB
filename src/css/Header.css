@@ -1,0 +1,230 @@
+nav.op-header {
+  position: fixed;
+  background-color: #ffbd59;
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top-color: #15c2a1;
+  border-top-width: 1px;
+  border-top-style: solid;
+  box-shadow: 2px -2px 9px #888888;
+  z-index: 200;
+}
+
+nav.op-header .op-logo {
+  line-height: 110px;
+  background-image: url('../assets/logo.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  min-height: 61px;
+  width: 230px;
+  margin-left: 100px;
+  text-decoration: none;
+}
+
+nav.op-header ul {
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+  float: right;
+  margin-right: 20px;
+  padding: 0;
+}
+
+nav.op-header ul li {
+  display: inline-block;
+  line-height: 110px;
+  margin: 0 5px;
+}
+
+nav.op-header ul li a {
+  font-size: 18px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 7px 13px;
+  color: #008037;
+}
+
+nav.op-header ul li a.active,
+nav.op-header ul li a:hover {
+  background-color: #008037;
+  transition: 0.5s;
+  color: #ffffff;
+}
+
+nav.op-header input[type='checkbox'] {
+  display: none;
+}
+
+nav.op-header .checkButton {
+  font-size: 30px;
+  color: #005d96;
+  float: right;
+  order: 4;
+  margin-right: 50px;
+  cursor: pointer;
+  display: none;
+}
+
+nav.op-header .checkButton span {
+  height: 5px;
+  width: 30px;
+  background-color: #008037;
+  display: block;
+  margin: 5px 0 5px 0;
+  transition: 0.7s ease-in-out;
+  transform: none;
+}
+
+nav.op-header
+  input[type='checkbox']:checked
+  ~ .checkButton
+  span:nth-of-type(1) {
+  opacity: 0;
+}
+
+nav.op-header
+  input[type='checkbox']:checked
+  ~ .checkButton
+  span:nth-of-type(2) {
+  transform: translate(0%, 175%) rotate(-45deg);
+}
+
+nav.op-header
+  input[type='checkbox']:checked
+  ~ .checkButton
+  span:nth-of-type(3) {
+  transform: rotate(45deg);
+}
+
+nav.op-header .op-redes i {
+  font-size: 35px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+nav.op-header .op-redes {
+  margin-right: 100px;
+  display: flex;
+}
+
+nav.op-header .op-redes a {
+  display: inline-block;
+}
+
+nav.op-header .op-redes .fa-whatsapp {
+  color: #008037;
+}
+/* 
+nav.op-header .op-redes .facebook {
+  background-color: #03588e;
+  -webkit-mask: url('../_img/facebook.svg') no-repeat center;
+  mask: url('../_img/facebook.svg') no-repeat center;
+  width: 33px;
+} */
+
+@media (min-width: 1450px) {
+  nav.op-header ul li a {
+    padding: 7px 25px;
+  }
+
+  nav.op-header ul li {
+    padding: 0 30px;
+  }
+}
+
+@media (max-width: 1158px) {
+  nav.op-header ul {
+    margin-right: 5px;
+  }
+
+  nav.op-header ul li {
+    margin: 0 1px;
+  }
+
+  nav.op-header ul li a {
+    padding: 7px;
+  }
+}
+
+@media (max-width: 952px) {
+  nav.op-header .op-logo {
+    margin-left: 50px;
+  }
+}
+
+@media (max-width: 858px) {
+  nav.op-header .checkButton {
+    display: block;
+  }
+
+  nav.op-header ul {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: #008037;
+    top: 101px;
+    left: -100%;
+    text-align: center;
+    transition: all 0.5s;
+    z-index: 100;
+    margin: 0;
+  }
+
+  nav.op-header ul li {
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+
+  nav.op-header ul li a {
+    color: #ffffff;
+  }
+
+  nav.op-header ul li a.active,
+  nav.op-header ul li a:hover {
+    background: none;
+    color: #0c0d0d82;
+    font-weight: bold;
+  }
+
+  nav.op-header input[type='checkbox']:checked ~ ul {
+    left: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  nav.op-header .op-logo {
+    margin-left: 30px;
+  }
+
+  nav.op-header .checkButton {
+    margin-right: 30px;
+  }
+
+  nav.op-header .op-redes {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    left: -100%;
+    bottom: 10px;
+    margin: 0;
+    transition: all 0.5s;
+    z-index: 101;
+  }
+
+  nav.op-header .op-redes i {
+    color: #ffffff !important;
+  }
+
+  nav.op-header .op-redes .facebook {
+    background-color: #ffffff;
+  }
+
+  nav.op-header input[type='checkbox']:checked ~ .op-redes {
+    left: 0;
+  }
+}

@@ -1,0 +1,424 @@
+.op-body {
+  position: relative;
+  width: 100%;
+  min-height: calc(100vh - 172px);
+  overflow: hidden;
+}
+
+.op-body .op-contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 100px 20px;
+}
+
+.op-body .op-contenedor .title {
+  flex: 0 1 100%;
+  height: auto;
+  font-size: 40px;
+  color: #008037;
+  text-transform: uppercase;
+  text-align: left;
+  animation: titulo-nos-loader 400ms ease-in;
+}
+
+.op-body .op-contenedor .title::before {
+  content: '';
+  position: absolute;
+  display: block;
+  height: 2px;
+  width: 60%;
+  background-color: #15c2a1;
+  transform-origin: left center;
+  transition: transform 1.25s;
+  left: 0;
+  top: 80px;
+  animation: titulo-nos-linea-loader 2500ms ease-in;
+}
+
+.op-body .op-contenedor .title::after {
+  content: attr(data-title);
+  position: absolute;
+  top: 0;
+  height: 0;
+  color: #ffffff;
+  width: 100%;
+  display: block;
+  transition: all 0.85s;
+  overflow: initial;
+}
+
+.op-body .op-contenedor .datos {
+  flex: 0 1 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.op-body .op-contenedor .datos .horario {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+  flex: 0 1 40%;
+}
+
+.op-body .op-contenedor .datos .subtitle {
+  font-size: 18px;
+  text-transform: uppercase;
+  color: #434041;
+  font-weight: bolder;
+  animation: subtitulo-nos-loader 900ms ease-in;
+}
+
+.op-body .op-contenedor .datos label {
+  color: #575756;
+  font-size: 18px;
+  animation: horario-nos-label-loader 2000ms ease-in;
+}
+
+.op-body .op-contenedor .datos .separador {
+  background-color: #d1d1d1;
+  height: 1px;
+  width: 100%;
+  margin-bottom: 20px;
+  animation: separador-nos-loader 3000ms ease-in;
+}
+
+.op-body .op-contenedor .datos .horario .iconos {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 0;
+}
+
+.op-body .op-contenedor .datos .horario .iconos img {
+  flex: 0 1 50%;
+  width: 70px;
+  height: 70px;
+  animation: horario-nos-imagen-loader 2000ms ease-in;
+}
+
+.op-body .op-contenedor .datos .bloque {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.op-body .op-contenedor .datos .bloque i {
+  color: #00b181;
+  padding: 10px 0;
+  animation: horario-nos-icono-loader 2500ms ease-in;
+}
+
+.op-body .op-contenedor .datos .bloque span {
+  color: #3c3c3b;
+  padding: 10px;
+  animation: horario-nos-span-loader 2500ms ease-in;
+}
+
+.op-body .op-contenedor .datos .fa-facebook-square {
+  padding: 10px 0;
+  align-self: flex-start;
+  color: #00b181;
+}
+
+.op-body .op-contenedor .datos .formulario {
+  margin-left: 70px;
+  display: flex;
+  flex-direction: column;
+}
+
+.op-body .op-contenedor .datos .formulario > span {
+  align-self: center;
+}
+
+.op-body .op-contenedor .datos .formulario form {
+  background-color: rgba(0, 177, 129, 0.2);
+  border-radius: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  padding: 40px;
+}
+
+.op-body .op-contenedor .datos .formulario form label {
+  font-size: 16px;
+  padding-bottom: 5px;
+}
+
+.op-body .op-contenedor .datos .formulario form textarea,
+.op-body .op-contenedor .datos .formulario form input {
+  align-self: flex-start;
+  width: 85%;
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid #93d121;
+  resize: none;
+  font-family: Lato;
+}
+
+.op-body .op-contenedor .datos .formulario form textarea,
+.op-body .op-contenedor .datos .formulario form .texto:nth-child(2n + 0) input {
+  width: calc(100% - 20px);
+}
+
+.op-body .op-contenedor .datos .formulario form textarea:focus,
+.op-body .op-contenedor .datos .formulario form input:focus {
+  outline: none !important;
+  border: none;
+  border-bottom: 1px solid #93d121;
+}
+
+.op-body .op-contenedor .datos .formulario form button {
+  padding: 15px 20px;
+  background-color: #00b181;
+  color: #ffffff;
+  border-radius: 25px;
+  border: 1px solid #00b181;
+  cursor: pointer;
+}
+
+.op-body .op-contenedor .datos .formulario form button:disabled {
+  background-color: #888888;
+  border-color: #888888;
+  cursor: not-allowed;
+}
+
+.op-body .op-contenedor .datos .formulario form button:focus {
+  outline: 0;
+}
+
+.op-body .op-contenedor .datos .formulario .texto {
+  display: flex;
+  flex-direction: column;
+  flex: 0 1 50%;
+  padding-bottom: 10px;
+}
+
+.op-body .op-contenedor .datos .formulario .texto span {
+  color: red;
+  font-size: 14px;
+  order: 3;
+}
+
+.op-body .op-contenedor .datos .formulario .texto span ~ textarea,
+.op-body .op-contenedor .datos .formulario .texto span ~ input {
+  border-bottom-color: red;
+}
+
+.op-body .op-contenedor .datos .formulario .check {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.op-body .op-contenedor .datos .formulario .check input {
+  width: fit-content;
+}
+
+.op-body .op-contenedor .datos .formulario .accion {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.op-body .op-contenedor .datos .formulario .col-1 {
+  flex: 0 1 100%;
+}
+
+.op-body .op-contenedor .mapa {
+  flex: 0 1 100%;
+}
+
+.op-body .op-contenedor .mapa iframe {
+  padding-top: 20px;
+  width: 100%;
+  height: 90vh;
+}
+
+@keyframes titulo-nos-loader {
+  0% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes titulo-nos-linea-loader {
+  0% {
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+  52% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes subtitulo-nos-loader {
+  0% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes separador-nos-loader {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes horario-nos-label-loader {
+  0% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  70% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes horario-nos-span-loader {
+  0% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  80% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes horario-nos-icono-loader {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  80% {
+    transform: scale(2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes horario-nos-imagen-loader {
+  0% {
+    transform: rotate(45deg);
+  }
+  50% {
+    transform: rotate(-45deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
+@media (max-width: 858px) {
+  .op-body .op-contenedor {
+    padding: 0 50px 20px;
+  }
+
+  .op-body .op-contenedor .title::before {
+    width: calc(100% - 50px);
+  }
+
+  .op-body .op-contenedor .datos {
+    flex: 0 1 100%;
+  }
+
+  .op-body .op-contenedor .datos .formulario {
+    margin-left: 0;
+  }
+
+  .op-body .op-contenedor .mapa {
+    flex: 0 1 100%;
+  }
+
+  .op-body .op-contenedor .mapa iframe {
+    padding: 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .op-body .op-contenedor {
+    padding: 0 30px 20px;
+  }
+
+  .op-body .op-contenedor .title {
+    font-size: 26px;
+  }
+
+  .op-body .op-contenedor .title::before {
+    width: calc(100% - 30px);
+    top: 60px;
+  }
+
+  .op-body .op-contenedor .datos label,
+  .op-body .op-contenedor .datos .subtitle {
+    font-size: 16px;
+  }
+
+  .op-body .op-contenedor .datos .separador,
+  .op-body .op-contenedor .datos .horario label:not(.activo),
+  .op-body .op-contenedor .datos .bloque {
+    display: none;
+  }
+
+  .op-body .op-contenedor .datos .horario label {
+    text-align: center;
+  }
+
+  .op-body .op-contenedor .datos .fa-facebook-square {
+    align-self: center;
+  }
+
+  .op-body .op-contenedor .datos .formulario {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+  }
+  .op-body .op-contenedor .datos .subtitle {
+    text-align: center;
+  }
+
+  .op-body .op-contenedor .datos {
+    flex-direction: column;
+  }
+
+  .op-body .op-contenedor .datos .formulario .texto {
+    flex: 0 1 100%;
+  }
+
+  .op-body .op-contenedor .datos .formulario .texto input {
+    width: calc(100% - 20px);
+  }
+
+  .op-body .op-contenedor .datos .formulario .accion {
+    justify-content: center;
+    padding-top: 20px;
+  }
+}

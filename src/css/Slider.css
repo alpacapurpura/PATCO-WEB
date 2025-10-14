@@ -1,0 +1,131 @@
+.op-slider {
+  position: relative;
+  top: 101px;
+  width: 100%;
+  height: calc(100vh - 101px);
+  overflow: hidden;
+}
+
+.op-slider .op-slides {
+  position: absolute;
+  width: 400%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transition: 2s ease;
+}
+
+.op-slider .op-slides .op-slide {
+  width: 25%;
+  height: 100%;
+  position: relative;
+  float: left;
+  background-color: transparent;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  filter: brightness(200%);
+}
+
+.op-slider .op-slides .op-slide::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.op-slider .op-slides .op-slide .op-slide-data {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  color: #ffffff;
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.op-slider .op-slides .op-slide .op-slide-data h2 {
+  font-weight: bolder;
+  background-color: #005d9685;
+  border-radius: 26px;
+  padding: 10px 30px;
+  filter: brightness(50%);
+  text-transform: uppercase;
+}
+
+.op-slider .op-arrows {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  outline: none;
+  border: none;
+  color: #ffffff;
+  transition: 0.4s linear;
+  cursor: pointer;
+}
+
+.op-slider .op-arrows:hover {
+  text-shadow: 0px 0px 10px black, 0 0 10px black;
+}
+
+.op-slider .op-arrows.prev {
+  left: 3%;
+}
+
+.op-slider .op-arrows.next {
+  right: 3%;
+}
+
+.op-slider .op-dots {
+  position: absolute;
+  bottom: 1%;
+  width: 100%;
+  text-align: center;
+}
+
+.op-slider .op-dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 100px;
+  background-color: #ffffff;
+  display: inline-block;
+  margin: 0 5px;
+  transition: 0.4s linear;
+  cursor: pointer;
+}
+
+.op-slider .op-dots span.dot-active,
+.op-slider .op-dots span:hover {
+  background-color: #005d96 !important;
+  border: 1px solid #ffffff;
+}
+
+@media (max-width: 858px) {
+  .op-slider .op-dots {
+    display: none;
+  }
+
+  .op-slider .op-arrows.prev {
+    left: 1%;
+  }
+
+  .op-slider .op-arrows.next {
+    right: 1%;
+  }
+}
+
+@media (max-width: 576px) {
+  .op-slider .op-slides .op-slide .op-slide-data {
+    padding: 0 10px;
+    font-size: 13px;
+    width: 96%;
+    text-align: center;
+  }
+}

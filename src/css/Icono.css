@@ -1,0 +1,56 @@
+.op-icon {
+  flex: 0 1 16%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.op-icon div.imagen {
+  position: relative;
+  background-color: transparent;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
+}
+
+.op-icon div.imagen::after {
+  content: "";
+  position: absolute;
+  background: #8888889e;
+  top: 3px;
+  left: 54%;
+  width: 95%;
+  height: 100%;
+  transform: translateZ(-100px) translateX(-50%);
+  filter: blur(4px);
+  z-index: -1;
+  border-radius: 50%;
+}
+
+.op-icon span {
+  color: #005d96;
+  padding-top: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+@media (max-width: 858px) { 
+  .op-icon {
+    flex: 0 1 33.3%;
+    padding-bottom: 20px;
+  }
+
+}
+
+@media (max-width: 576px) { 
+  .op-icon {
+    flex: 0 1 100%;
+  }
+
+  .op-icon div.imagen {
+    width: 200px;
+    height: 200px;
+  }
+}
