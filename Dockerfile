@@ -13,7 +13,8 @@ RUN npm ci
 # Copy source code
 COPY . .
 
-# Build the React app
+# Build the React app with OpenSSL legacy provider for compatibility
+ENV NODE_OPTIONS="--openssl-legacy-provider"
 RUN npm run build
 
 # Stage 2: Serve with nginx
