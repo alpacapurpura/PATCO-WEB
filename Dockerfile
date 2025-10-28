@@ -1,6 +1,6 @@
 # Multi-stage build for React application
 # Stage 1: Build the React app
-FROM node:18-alpine AS builder
+FROM node:14-alpine AS builder
 
 WORKDIR /app
 
