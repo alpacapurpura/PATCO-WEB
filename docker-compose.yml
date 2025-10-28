@@ -1,0 +1,37 @@
+version: "3.8"
+
+services:
+  patco-web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: patco-web-app
+    restart: unless-stopped
+    networks:
+      - web_gateway
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=web_gateway"
+      - "traefik.http.routers.patco-web-http.rule=Host(`patcoperu.com`) || Host(`www.patcoperu.com`)"
+      - "traefik.http.routers.patco-web-http.entrypoints=web"
+      - "traefik.http.routers.patco-web-http.middlewares=redirect-to-https"
+      - "traefik.http.routers.patco-web-https.rule=Host(`patcoperu.com`) || Host(`www.patcoperu.com`)"
+      - "traefik.http.routers.patco-web-https.entrypoints=websecure"
+      - "traefik.http.routers.patco-web-https.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.patco-web-https.middlewares=www-redirect"
+      - "traefik.http.services.patco-web-service.loadbalancer.server.port=80"
+      - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
+      - "traefik.http.middlewares.redirect-to-https.redirectscheme.permanent=true"
+      - "traefik.http.middlewares.www-redirect.redirectregex.regex=^https://www\\.patcoperu\\.com/(.*)"
+      - "traefik.http.middlewares.www-redirect.redirectregex.replacement=https://patcoperu.com/$${1}"
+      - "traefik.http.middlewares.www-redirect.redirectregex.permanent=true"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+networks:
+  web_gateway:
+    external: true
